@@ -4,3 +4,4 @@ This repository contains my solutions for [Advent of Code 2020](https://adventof
 
 * Day 1: Solved using Python 3
 * Day 2: Solved using bash
+* Day 2: Solved using Ruby 2.7
