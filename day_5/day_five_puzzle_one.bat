@@ -3,8 +3,6 @@ setlocal enabledelayedexpansion
 
 set "line="
 
-set /a max_id=0
-
 for /f "tokens=*" %%s in (input) do (
 
     set /a "row_start=0"
@@ -50,21 +48,10 @@ for /f "tokens=*" %%s in (input) do (
 
     set /a seat_id=!row_end!*8+!column_end!
 
-    if "!max_id!" lss "!seat_id!" (
-        set /a !max_id!=!seat_id!
-    )
+    echo !seat_id!
 
-    echo !seat_id! !max_id!
+    echo !seat_id! >> ids
 
-
-)
-
-echo Highest seat id: %max_id%
-set /a test=10
-set /a res=15
-
-if "%test%" lss "%res%" (
-    echo less
 )
 
 exit /b
