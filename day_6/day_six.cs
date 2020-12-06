@@ -26,7 +26,6 @@ class MainClass {
     }
 
     Console.WriteLine("Sum of all counts: " + sum);
-
   }
 
   public static void puzzle_two() {
@@ -61,16 +60,13 @@ class MainClass {
           {
             otherChars.Add(c);
           }
-
-
+          
           commonChars.IntersectWith(otherChars);
         }
       }
-
     }
 
     Console.WriteLine("Sum of all counts: " + sum);
-
   }
 
   public static void Main (string[] args) {
