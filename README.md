@@ -8,3 +8,4 @@ This repository contains my solutions for [Advent of Code 2020](https://adventof
 * Day 4: Solved using Lua 5.4
 * Day 5: Solved using batch script
 * Day 6: Solved using C# 9.0
+* Day 7: Solved using Go 1.14
