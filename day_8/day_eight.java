@@ -14,6 +14,10 @@ public class Main {
             e.printStackTrace();
     }
 
+    // puzzle one
+    // run_file(lines);
+
+    // puzzle two
     for (int i = 0; i < lines.size(); i++){
       List<String> modifiedLines = new  ArrayList<String>(lines);
       String line = modifiedLines.get(i);
@@ -41,7 +45,7 @@ public class Main {
 
       if (lineNumber == lines.size()) {
         System.out.println("It works!");
-        System.out.println("Result puzzle_two: " + acc);
+        System.out.println("Result: " + acc);
         return true;
       }
 
@@ -64,6 +68,8 @@ public class Main {
       }
 
     }
+
+    System.out.println(acc);
 
     return false;
   }
