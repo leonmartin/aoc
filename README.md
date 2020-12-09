@@ -10,3 +10,4 @@ This repository contains my solutions for [Advent of Code 2020](https://adventof
 * Day 6: Solved using C# 9.0
 * Day 7: Solved using Go 1.14
 * Day 8: Solved using Java 11
+* Day 9: Solved using Kotlin
