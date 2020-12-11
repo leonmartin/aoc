@@ -11,4 +11,5 @@ This repository contains my solutions for [Advent of Code 2020](https://adventof
 * Day 7: Solved using Go 1.14
 * Day 8: Solved using Java 11
 * Day 9: Solved using Kotlin
-* Day 10: Solved using R
+* Day 10: Solved using R 3.5
+* Day 11: Solved using Dart 2.6
