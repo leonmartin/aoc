@@ -14,3 +14,4 @@ This repository contains my solutions for [Advent of Code 2020](https://adventof
 * Day 10: Solved using R 3.5
 * Day 11: Solved using Dart 2.6
 * Day 12: Solved using Swift 5
+* Day 13: Solved using Julia 1.3
