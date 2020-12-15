@@ -21,7 +21,7 @@ function tryConfig(start, buslines)
   return true
 end
 
-path = "input2"
+path = "input"
 
 # puzzle one
 open(path) do io
@@ -52,59 +52,35 @@ open(path) do io
   eta_raw = readline(io)
   buslines_raw = readline(io)
   buslines = split(buslines_raw, ",")
+  #buslines = filter(busline -> busline != "x", buslines)
+  #buslines = map(busline -> parse(Int, busline), buslines)
 
-  firstvalue = parse(Int, buslines[1])
-
-  maxbusline = 0
-  maxbuslineindex = 0
-
-  for (index, value) in enumerate(buslines)
-    if value != "x" && parse(Int, value) > maxbusline
-      maxbusline = parse(Int, value) 
-      maxbuslineindex = index
-    end
-  end
-  println(maxbusline)
-  println(maxbuslineindex)
-
-  secondmaxbusline = 0
-  secondmaxbuslineindex = 0
-
-  for (index, value) in enumerate(buslines)
-    if value != "x" && parse(Int, value) > secondmaxbusline && parse(Int, value) != maxbusline
-      secondmaxbusline = parse(Int, value) 
-      secondmaxbuslineindex = index
-    end
-  end
-  println(secondmaxbusline)
-  println(secondmaxbuslineindex)
-
-
-  ctr = maxbusline - maxbuslineindex + 1
-
-  first = 0
-  while (((ctr + maxbuslineindex - 1) % maxbusline) != 0) || ((ctr % secondmaxbusline) != 0)
-    ctr += maxbusline
-  end
-
-  first = ctr
-  ctr += maxbusline
-
-  second = 0
-  while (((ctr + maxbuslineindex - 1) % maxbusline) != 0) || ((ctr % secondmaxbusline) != 0)
-    ctr += maxbusline
-  end
-  second = ctr
-
-  step = second - first
-  println(step)
-  start = first
-
-  while !tryConfig(start, buslines)
-    start = start + step
-  end
+  buslines2 = fill((0,0), length(buslines))
   
-  solution = start
+  for (index, value) in enumerate(buslines)
+    if value != "x"
+      buslines2[index] = (parse(Int, value), index)
+    end
+  end 
+
+  buslines2 = filter(busline -> busline != (0,0), buslines2)
+
+  lcm = 1
+  time = 0
+
+  for i = 1:length(buslines2)-1
+    busline = buslines2[i+1][1]
+    index = buslines2[i+1][2]
+
+    lcm *= buslines2[i][1]
+
+    while (time + (index-1)) % busline != 0
+      time += lcm
+    end
+  end
+
+  solution = time
+  
   println("Solution for puzzle two: $solution")
 
   close(io)
