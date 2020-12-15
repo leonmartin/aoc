@@ -21,7 +21,7 @@ function tryConfig(start, buslines)
   return true
 end
 
-path = "input"
+path = "input2"
 
 # puzzle one
 open(path) do io
@@ -67,11 +67,41 @@ open(path) do io
   println(maxbusline)
   println(maxbuslineindex)
 
-  startat = (0 ÷ maxbusline) * maxbusline
-  start = startat - maxbuslineindex + 1
+  secondmaxbusline = 0
+  secondmaxbuslineindex = 0
+
+  for (index, value) in enumerate(buslines)
+    if value != "x" && parse(Int, value) > secondmaxbusline && parse(Int, value) != maxbusline
+      secondmaxbusline = parse(Int, value) 
+      secondmaxbuslineindex = index
+    end
+  end
+  println(secondmaxbusline)
+  println(secondmaxbuslineindex)
+
+
+  ctr = maxbusline - maxbuslineindex + 1
+
+  first = 0
+  while (((ctr + maxbuslineindex - 1) % maxbusline) != 0) || ((ctr % secondmaxbusline) != 0)
+    ctr += maxbusline
+  end
+
+  first = ctr
+  ctr += maxbusline
+
+  second = 0
+  while (((ctr + maxbuslineindex - 1) % maxbusline) != 0) || ((ctr % secondmaxbusline) != 0)
+    ctr += maxbusline
+  end
+  second = ctr
+
+  step = second - first
+  println(step)
+  start = first
 
   while !tryConfig(start, buslines)
-    start = start + maxbusline
+    start = start + step
   end
   
   solution = start
