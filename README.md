@@ -17,3 +17,4 @@ This repository contains my solutions for [Advent of Code 2020](https://adventof
 * Day 13: Solved using Julia 1.3
 * Day 14: Solved using Nim 1.2
 * Day 15: Solved using Scala 2.13
+* Day 16: Solved using PHP 7.2
