@@ -22,9 +22,7 @@ with open("input", "r") as eingabedatei:
                 element = spalten[von-1].pop()
                 spalten[nach-1] += [element]
 
-            print(spalten_zwei)
             kisten = spalten_zwei[von-1][-bewege:]
-            print(kisten)
             spalten_zwei[von-1] = spalten_zwei[von-1][:len(spalten_zwei[von-1])-bewege]
             spalten_zwei[nach-1] += kisten
     
