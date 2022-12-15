@@ -16,7 +16,7 @@ with open("input", "r") as eingabedatei:
                 score += 3
             case ["R", "Z"]:
                 score += 2
-                score += 6
+                score += 6 
             case ["P", "X"]:
                 score += 1
             case ["P", "Y"]:
